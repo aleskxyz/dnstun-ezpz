@@ -89,7 +89,9 @@ Invalid input for any prompt is rejected; the previous or default value is kept 
 
 After answering the prompts, the script brings up / updates all Docker services and then prints:
 
-- **Client config per instance** (domain, transport, protocol, username/password)
+- **Client config per instance** (domain, transport, protocol, username/password, and for dnstt the public key)
+- **SlipNet URI** (`slipnet://…`) for each instance — paste or scan to import into the [SlipNet](https://github.com/AnonVector/SlipNet) app
+- **QR code** for each instance — scan directly with the SlipNet app's camera
 - **DNS records to create** (A + NS)
 - A **join command** you can copy to other servers to join the same cluster.
 
@@ -274,6 +276,8 @@ Prints:
   - Domain, **transport** (dnstt / slipstream), **protocol** (`ssh` / `socks`)
   - Username/password (same for SSH and SOCKS)
   - Public key (only for dnstt; slipstream uses TLS)
+  - **SlipNet URI** (`slipnet://…`) — import into the SlipNet app by pasting
+  - **QR code** — scan with the SlipNet app to import the profile
 - **DNS records** (A + NS, with server id indicated for each A record).
 - **Join command** for other servers.
 

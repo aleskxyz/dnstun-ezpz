@@ -118,7 +118,7 @@ WARN[0000] Warning: No resource found to remove for project "dnstun-ezpz".
 ✔ Container dnstun-ezpz-route-setup-1  Created
 ```
 
-پایین‌تر کانفیگ کلاینت برای هر instance چاپ میشه (دامنه، ترنسپورت، پروتکل، کاربر/رمز؛ برای dnstt کلید عمومی هم هست):
+پایین‌تر کانفیگ کلاینت برای هر instance چاپ میشه (دامنه، ترنسپورت، پروتکل، کاربر/رمز؛ برای dnstt کلید عمومی هم هست). همچنین برای هر instance یک **SlipNet URI** و **کد QR** نمایش داده میشه که میتونید مستقیماً توی اپ [SlipNet](https://github.com/AnonVector/SlipNet) اسکن یا paste کنید:
 ```
 ==== CLIENT CONFIG ====
 
@@ -129,6 +129,14 @@ protocol: ssh
 username: vpnuser
 password: P@ssword
 public_key: 665e2fade9ee6a38bff5afdc0a9a03f231a812930f9f45125be8d3c90832e20c
+
+SlipNet URI:
+slipnet://MTd8ZG5zdHRfc3NofGRuc3R0LXNza...
+
+█████████████████████████
+████ ▄▄▄▄▄ █ ... █████
+  (کد QR قابل اسکن)
+█████████████████████████
 ---
 
 --- Instance 2 ---
@@ -137,6 +145,11 @@ transport: slipstream
 protocol: socks
 username: vpnuser
 password: P@ssword
+
+SlipNet URI:
+slipnet://MTd8c3N8c2xpcHN0cmVhb...
+
+(کد QR)
 ---
 
 --- Instance 3 ---
@@ -146,6 +159,11 @@ protocol: socks
 username: vpnuser
 password: P@ssword
 public_key: 665e2fade9ee6a38bff5afdc0a9a03f231a812930f9f45125be8d3c90832e20c
+
+SlipNet URI:
+slipnet://MTd8ZG5zdHR8ZG5zdHQtc29...
+
+(کد QR)
 ---
 
 --- Instance 4 ---
@@ -154,6 +172,11 @@ transport: slipstream
 protocol: ssh
 username: vpnuser
 password: P@ssword
+
+SlipNet URI:
+slipnet://MTd8c2xpcHN0cmVhbV9zc2...
+
+(کد QR)
 ---
 ```
 
@@ -218,7 +241,7 @@ s3.demo1.com   A   60.70.80.92
 
 خروجی اسکریپت در آخر یک خط «Join command» با یک رشتهٔ base64 نشون میده. اون خط رو کامل کپی کنید. روی سرور دوم و سوم با root همان دستور رو اجرا کنید؛ اسکریپت از شما فقط «این سرور ID چنده؟» (۲ و ۳) رو می‌پرسه و بقیهٔ کانفیگ رو از همون رشته می‌گیره. بعد از join، کلاستر تکمیل میشه.
 
-حالا می‌تونید با وارد کردن دامنه، ترنسپورت (dnstt یا slipstream)، پروتکل (ssh یا socks)، کاربر/رمز و در صورت dnstt کلید عمومی، در کلاینت از تونل استفاده کنید.
+حالا می‌تونید با اسکن کد QR یا paste کردن SlipNet URI مستقیماً توی اپ SlipNet پروفایل رو وارد کنید. همچنین میتونید دامنه، ترنسپورت، پروتکل، کاربر/رمز و کلید عمومی رو به صورت دستی در کلاینت وارد کنید.
 
 یه کم زمان میبره تا تنظیمات DNS ها اعمال بشه.
 
@@ -236,7 +259,7 @@ s3.demo1.com   A   60.70.80.92
 
 با وارد کردن عدد هر گزینه آن عملیات اجرا میشه:
 
-1. **نمایش کانفیگ فعلی** — همان خروجی دامنه/ترنسپورت/پروتکل، رکوردهای DNS و دستور join.
+1. **نمایش کانفیگ فعلی** — همان خروجی دامنه/ترنسپورت/پروتکل، SlipNet URI و کد QR برای هر instance، رکوردهای DNS و دستور join.
 2. **تنظیم مجدد کلاستر** — تغییر ID سرور، پیشوند، تعداد سرور، کاربر/رمز، دامنه‌ها، ترنسپورت و پروتکل. بعد از تغییر حتماً دستور join جدید رو در بقیه سرورها هم اجرا کنید.
 3. **استارت سرویس‌ها**
 4. **توقف سرویس‌ها**

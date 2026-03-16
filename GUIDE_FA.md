@@ -28,7 +28,7 @@
 اسکریپت حتماً باید با root اجرا شود. وارد سرور اول میشیم و دستور زیر رو اجرا میکنیم:
 ```
 sudo -i
-bash <(curl -sL "https://cdn.jsdelivr.net/gh/aleskxyz/dnstun-ezpz@v0.3.0/dnstun-ezpz.sh")
+bash <(curl -sL "https://cdn.jsdelivr.net/gh/aleskxyz/dnstun-ezpz@v0.3.1/dnstun-ezpz.sh")
 ```
 چندتا سوال از ما پرسیده میشه که به این صورت جواب میدیم:
 ```
@@ -236,7 +236,7 @@ s3.demo1.com   A   60.70.80.92
 
     Run on other servers to join:
 
-    bash <(curl -sL "https://cdn.jsdelivr.net/gh/aleskxyz/dnstun-ezpz@v0.3.0/dnstun-ezpz.sh") "<BASE64_JOIN_CONFIG>"
+    bash <(curl -sL "https://cdn.jsdelivr.net/gh/aleskxyz/dnstun-ezpz@v0.3.1/dnstun-ezpz.sh") "<BASE64_JOIN_CONFIG>"
 
 
 خروجی اسکریپت در آخر یک خط «Join command» با یک رشتهٔ base64 نشون میده. اون خط رو کامل کپی کنید. روی سرور دوم و سوم با root همان دستور رو اجرا کنید؛ اسکریپت از شما فقط «این سرور ID چنده؟» (۲ و ۳) رو می‌پرسه و بقیهٔ کانفیگ رو از همون رشته می‌گیره. بعد از join، کلاستر تکمیل میشه.
@@ -247,7 +247,7 @@ s3.demo1.com   A   60.70.80.92
 
 اگر بعد از ایجاد کانفیگ دوباره اسکریپت رو بدون آرگومان اجرا کنید، یک منو نشون داده میشه:
 
-    bash <(curl -sL "https://cdn.jsdelivr.net/gh/aleskxyz/dnstun-ezpz@v0.3.0/dnstun-ezpz.sh")
+    bash <(curl -sL "https://cdn.jsdelivr.net/gh/aleskxyz/dnstun-ezpz@v0.3.1/dnstun-ezpz.sh")
     Select action:
     1) Print current config
     2) Reconfigure cluster

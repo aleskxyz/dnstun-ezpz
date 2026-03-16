@@ -26,7 +26,7 @@ On a **fresh server**, do:
 
 ```bash
 sudo -i
-bash <(curl -sL "https://cdn.jsdelivr.net/gh/aleskxyz/dnstun-ezpz@v0.3.0/dnstun-ezpz.sh")
+bash <(curl -sL "https://cdn.jsdelivr.net/gh/aleskxyz/dnstun-ezpz@v0.3.1/dnstun-ezpz.sh")
 ```
 
 On first run (no existing config under `/opt/dnstun-ezpz`), it will go straight into **Create cluster**.
@@ -139,7 +139,7 @@ These NS records go in the parent zone of each `nsX.example.com` (e.g. `example.
 At the end of a successful run on the **first server**, you get a join command like:
 
 ```bash
-bash <(curl -sL "https://cdn.jsdelivr.net/gh/aleskxyz/dnstun-ezpz@v0.3.0/dnstun-ezpz.sh") "<BASE64_JOIN_CONFIG>"
+bash <(curl -sL "https://cdn.jsdelivr.net/gh/aleskxyz/dnstun-ezpz@v0.3.1/dnstun-ezpz.sh") "<BASE64_JOIN_CONFIG>"
 ```
 
 To join another server:
@@ -168,7 +168,7 @@ Run:
 
 ```bash
 sudo -i
-bash <(curl -sL "https://cdn.jsdelivr.net/gh/aleskxyz/dnstun-ezpz@v0.3.0/dnstun-ezpz.sh")
+bash <(curl -sL "https://cdn.jsdelivr.net/gh/aleskxyz/dnstun-ezpz@v0.3.1/dnstun-ezpz.sh")
 ```
 
 Choose:
@@ -252,7 +252,7 @@ When there is an existing `dnstun.conf` and you run:
 
 ```bash
 sudo -i
-bash <(curl -sL "https://cdn.jsdelivr.net/gh/aleskxyz/dnstun-ezpz@v0.3.0/dnstun-ezpz.sh")
+bash <(curl -sL "https://cdn.jsdelivr.net/gh/aleskxyz/dnstun-ezpz@v0.3.1/dnstun-ezpz.sh")
 ```
 
 You see:

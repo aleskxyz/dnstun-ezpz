@@ -5,7 +5,7 @@ set -e
 # Variables
 # ===========================
 BASE_DIR="/opt/dnstun-ezpz"
-DNSTUN_VERSION="v0.3.1"
+DNSTUN_VERSION="v0.3.2"
 CONFIG_FILE="$BASE_DIR/dnstun.conf"
 DNS_LB_YML="$BASE_DIR/dns-lb.yml"
 DOCKER_COMPOSE_YML="$BASE_DIR/docker-compose.yml"
@@ -19,7 +19,7 @@ ROUTE_SETUP_SH="$BASE_DIR/route_setup.sh"
 TRANSPORT_FIRST_PORT=48271
 DNSTT_SERVER_IMAGE="ghcr.io/aleskxyz/dnstt-server:1.1.0"
 SLIPSTREAM_SERVER_IMAGE="aleskxyz/slipstream-server:1.1.3"
-DNS_LB_IMAGE="ghcr.io/aleskxyz/dns-tun-lb:0.2.6"
+DNS_LB_IMAGE="ghcr.io/aleskxyz/dns-tun-lb:0.3.0"
 SINGBOX_SOCKS_PORT=48260
 SINGBOX_IMAGE="gzxhwq/sing-box:1.12.14"
 ROUTE_SETUP_IMAGE="icasture/network-helper:latest"

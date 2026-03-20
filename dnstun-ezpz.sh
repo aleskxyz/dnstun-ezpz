@@ -66,6 +66,40 @@ install_packages() {
   exit 1
 }
 
+# ==============================================================================
+# Function: Free up Port 53 (Disable systemd-resolved stub listener)
+# ==============================================================================
+free_port_53() {
+    echo "Checking if port 53 is occupied by systemd-resolved..."
+    
+    # Check if systemd and systemd-resolved are active on this OS
+    if command -v systemctl >/dev/null 2>&1 && systemctl is-active --quiet systemd-resolved; then
+        echo "Disabling systemd-resolved DNS stub listener..."
+        
+        # 1. Create the drop-in configuration directory
+        mkdir -p /etc/systemd/resolved.conf.d
+        
+        # 2. Create the override file to disable the stub listener
+        echo -e "[Resolve]\nDNSStubListener=no" > /etc/systemd/resolved.conf.d/dns-stub.conf
+        
+        # 3. Apply the changes by restarting the service
+        systemctl restart systemd-resolved
+        
+        # 4. Safely update resolv.conf to point to the real upstream DNS
+        if [ -L /etc/resolv.conf ]; then
+            rm -f /etc/resolv.conf
+        fi
+        ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+        
+        echo "✅ Port 53 has been successfully freed."
+    else
+        echo "✅ systemd-resolved is not active. Port 53 should be clear."
+    fi
+}
+
+# Execute the function
+free_port_53
+
 # ===========================
 # Install Docker and set compose command
 # ===========================
